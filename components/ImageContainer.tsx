@@ -18,16 +18,21 @@ const ImageContainer = ({ category }: { category: string }) => {
                         </p>
                     </div>
                     <div className="w-full flex flex-col items-center justify-center gap-2">
-                        {images?.results?.map((image: NekoType) => (
-                            <Card
-                                imgSrc={image.url}
-                                title={
-                                    image.artist_name ?? image.anime_name ?? ""
-                                }
-                                description={image.artist_ref}
-                                source_url={image.source_url}
-                            />
-                        ))}
+                        {images?.results?.map(
+                            (image: NekoType, key: number) => (
+                                <Card
+                                    imgSrc={image.url}
+                                    title={
+                                        image.artist_name ??
+                                        image.anime_name ??
+                                        ""
+                                    }
+                                    description={image.artist_ref}
+                                    source_url={image.source_url}
+                                    key={key}
+                                />
+                            )
+                        )}
                     </div>
                 </div>
             ) : (

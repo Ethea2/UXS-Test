@@ -29,6 +29,15 @@ const ImageContainer = ({ category }: { category: string }) => {
                             />
                         ))}
                     </div>
+                    {images?.results?.map((image: NekoType, index: number) => (
+                        <Card
+                            imgSrc={image.url}
+                            title={image.artist_name ?? image.anime_name ?? ""}
+                            description={image.artist_ref}
+                            source_url={image.source_url}
+                            key={index}
+                        />
+                    ))}
                 </div>
             ) : (
                 <div className="w-2/3 flex flex-col justify-center items-center border-2">

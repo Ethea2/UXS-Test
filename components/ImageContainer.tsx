@@ -12,12 +12,13 @@ const ImageContainer = ({ category }: { category: string }) => {
                     <div className="flex justify-center items-center w-full">
                         {category}
                     </div>
-                    {images?.results?.map((image: NekoType) => (
+                    {images?.results?.map((image: NekoType, index: number) => (
                         <Card
                             imgSrc={image.url}
                             title={image.artist_name ?? image.anime_name ?? ""}
                             description={image.artist_ref}
                             source_url={image.source_url}
+                            key={index}
                         />
                     ))}
                 </div>

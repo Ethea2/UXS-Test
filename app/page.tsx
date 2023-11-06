@@ -25,22 +25,22 @@ const Home = () => {
         getCategories().then((data) => setCategories(data))
     }, [])
     return (
-        <main className="min-h-screen w-full p-10 flex justify-center items-start gap-8">
+        <main className="min-h-screen w-full flex justify-center items-start p-8">
             <div className="w-[50%]">
                 <Suspense fallback={<div>Loading...</div>}>
                     <ImageContainer category={category} />
                 </Suspense>
             </div>
-            <div className="w-1/3 flex flex-col justify-center items-center gap-2 bg-gradient-to-r from-[#C0EEF2]/40 to-[#E9F8F9]/40 p-2 rounded-lg">
-                <div className="w-full text-center">
+            <div className="w-1/3 flex flex-col justify-center items-center gap-2 bg-[#F6C391] rounded-lg">
+                <div className="pt-4 w-full text-center">
                     <p className="text-xl font-bold uppercase text-white drop-shadow-md">
                         Categories
                     </p>
                 </div>
-                <div className="w-fit grid grid-flow-row grid-cols-4 justify-center items-center gap-2">
+                <div className="w-full flex flex-wrap justify-center items-center gap-2 pb-4">
                     {categories?.map((category: string, index: number) => (
                         <div
-                            className="w-fit h-fit"
+                            className="w-[150px]"
                             onClick={() => setCategory(category)}
                             key={index}
                         >

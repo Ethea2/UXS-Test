@@ -10,9 +10,9 @@ const ImageContainer = ({ category }: { category: string }) => {
             {category !== "" ? (
                 <div className="w-full flex flex-col items-center justify-center">
                     <div className="w-full flex justify-center items-center">
-                        <p className="text-white font-bold">
+                        <p className="text-[#3F1D38] font-bold">
                             Category:{" "}
-                            <span className="text-white text-lg font-black uppercase">
+                            <span className="text-[#3F1D38] text-lg font-black uppercase">
                                 {category}
                             </span>
                         </p>
@@ -36,8 +36,8 @@ const ImageContainer = ({ category }: { category: string }) => {
                     </div>
                 </div>
             ) : (
-                <div className="w-2/3 flex flex-col justify-center items-center border-2">
-                    Select a category!
+                <div className="w-2/3 h-screen flex flex-col justify-center items-center">
+                    <p className="text-white">Select a category!</p>
                 </div>
             )}
         </>

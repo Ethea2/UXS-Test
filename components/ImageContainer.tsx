@@ -9,7 +9,7 @@ const ImageContainer = ({ category }: { category: string }) => {
         <>
             {category !== "" ? (
                 <div className="w-full flex flex-col items-center justify-center">
-                    <div className="w-full flex justify-center items-center w-full">
+                    <div className="w-full flex justify-center items-center">
                         <p className="text-white font-bold">
                             Category:{" "}
                             <span className="text-white text-lg font-black uppercase">

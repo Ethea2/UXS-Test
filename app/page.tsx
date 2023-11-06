@@ -1,6 +1,7 @@
 "use client"
 import { Suspense, useEffect, useState } from "react"
 import ImageContainer from "@/components/ImageContainer"
+import GradientButton from "@/components/GradientButton"
 
 export interface NekoType {
     artist_ref: string
@@ -36,15 +37,15 @@ const Home = () => {
                         Categories
                     </p>
                 </div>
-                <div className="w-fit flex flex-wrap justify-center items-center gap-2">
+                <div className="w-fit grid grid-flow-row grid-cols-4 justify-center items-center gap-2">
                     {categories?.map((category: string, index: number) => (
-                        <p
-                            className="w-[100px] p-2 text-center bg-[#E9F8F9]/50 rounded-sm cursor-pointer"
+                        <div
+                            className="w-fit h-fit"
                             onClick={() => setCategory(category)}
                             key={index}
                         >
-                            {category}
-                        </p>
+                            <GradientButton category={category} />
+                        </div>
                     ))}
                 </div>
             </div>

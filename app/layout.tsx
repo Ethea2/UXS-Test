@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
     title: "UXS Sample application",
-    description: "Nekotegory"
+    description: "Nekotegory",
+    openGraph: {
+        images: ["https://images.unsplash.com/photo-1628723366600-dcbf51c0e0ea?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+    }
 }
 
 export default function RootLayout({
@@ -18,12 +21,6 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <header>
-                <meta
-                    property="og:image"
-                    content="https://images.unsplash.com/photo-1628723366600-dcbf51c0e0ea?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-            </header>
             <body className={inter.className}>
                 {children}
                 <ToastContainer

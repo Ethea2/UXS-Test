@@ -24,23 +24,29 @@ const Home = () => {
         getCategories().then((data) => setCategories(data))
     }, [])
     return (
-        <main className="flex min-h-screen w-full justify-center items-start p-10">
-            <Suspense fallback={<div>Loading...</div>}>
-                <ImageContainer category={category} />
-            </Suspense>
-            <div className="w-1/3 flex flex-col justify-center items-center border-2">
-                <div className="w-full border-2 border-red-500 flex justify-center items-center">
-                    Categories
-                </div>
-                {categories?.map((category: string, index: number) => (
-                    <p
-                        className="w-full flex justify-center items-center text-purple-500 font-bold m-2 border-emerald-400 border-2 cursor-pointer"
-                        onClick={() => setCategory(category)}
-                        key={index}
-                    >
-                        {category}
+        <main className="min-h-screen w-full p-10 flex justify-center items-start gap-8">
+            <div className="w-[50%]">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ImageContainer category={category} />
+                </Suspense>
+            </div>
+            <div className="w-1/3 flex flex-col justify-center items-center gap-2 bg-gradient-to-r from-[#C0EEF2]/40 to-[#E9F8F9]/40 p-2 rounded-lg">
+                <div className="w-full text-center">
+                    <p className="text-xl font-bold uppercase text-white drop-shadow-md">
+                        Categories
                     </p>
-                ))}
+                </div>
+                <div className="w-fit flex flex-wrap justify-center items-center gap-2">
+                    {categories?.map((category: string, index: number) => (
+                        <p
+                            className="w-[100px] p-2 text-center bg-[#E9F8F9]/50 rounded-sm cursor-pointer"
+                            onClick={() => setCategory(category)}
+                            key={index}
+                        >
+                            {category}
+                        </p>
+                    ))}
+                </div>
             </div>
         </main>
     )

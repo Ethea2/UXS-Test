@@ -8,22 +8,31 @@ const ImageContainer = ({ category }: { category: string }) => {
     return (
         <>
             {category !== "" ? (
-                <div className="w-2/3 flex flex-col justify-center items-center border-2">
-                    <div className="flex justify-center items-center w-full">
-                        {category}
+                <div className="w-full flex flex-col items-center justify-center">
+                    <div className="w-full flex justify-center items-center w-full">
+                        <p className="text-white font-bold">
+                            Category:{" "}
+                            <span className="text-white text-lg font-black uppercase">
+                                {category}
+                            </span>
+                        </p>
                     </div>
-                    {images?.results?.map((image: NekoType) => (
-                        <Card
-                            imgSrc={image.url}
-                            title={image.artist_name ?? image.anime_name ?? ""}
-                            description={image.artist_ref}
-                            source_url={image.source_url}
-                        />
-                    ))}
+                    <div className="w-full flex flex-col items-center justify-center">
+                        {images?.results?.map((image: NekoType) => (
+                            <Card
+                                imgSrc={image.url}
+                                title={
+                                    image.artist_name ?? image.anime_name ?? ""
+                                }
+                                description={image.artist_ref}
+                                source_url={image.source_url}
+                            />
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <div className="w-2/3 flex flex-col justify-center items-center border-2">
-                    No selected category
+                    Select a category!
                 </div>
             )}
         </>

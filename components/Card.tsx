@@ -31,7 +31,7 @@ const Card = ({
                         right: "50%"
                     }
                 }}
-                className="absolute inset-0 bg-slate-200 z-10"
+                className="absolute inset-0 bg-slate-200 z-20"
                 style={{
                     backgroundImage: `url(${imgSrc})`,
                     backgroundSize: "cover",
@@ -53,7 +53,7 @@ const Card = ({
             ) : (
                 <div
                     rel="nofollow"
-                    className="w-1/2 h-1/2 absolute bottom-0 right-0 z-0 grid place-content-center bg-white text-black hover:text-indigo-500 transition-colors"
+                    className="w-1/2 h-1/2 absolute bottom-0 right-0 z-10 grid place-content-center bg-white text-black hover:text-indigo-500 transition-colors"
                 >
                     <div className="flex items-center gap-2">
                         <span className="text-xs">no extra info</span>

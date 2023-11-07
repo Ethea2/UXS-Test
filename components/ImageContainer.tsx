@@ -8,7 +8,7 @@ const ImageContainer = ({ category }: { category: string }) => {
     return (
         <>
             {category !== "" ? (
-                <div className="w-full flex flex-col items-center justify-center">
+                <div className=" w-full flex flex-col items-center justify-center">
                     <div className=" w-full flex justify-center items-center">
                         <p className="text-[#3F1D38] font-bold">
                             Category:{" "}
@@ -17,7 +17,7 @@ const ImageContainer = ({ category }: { category: string }) => {
                             </span>
                         </p>
                     </div>
-                    <div className="w-full flex flex-col items-center justify-center gap-2">
+                    <div className="w-full flex flex-col items-center justify-center gap-2 ">
                         {images?.results?.map(
                             (image: NekoType, key: number) => (
                                 <Card

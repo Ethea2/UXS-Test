@@ -25,29 +25,35 @@ const Home = () => {
         getCategories().then((data) => setCategories(data))
     }, [])
     return (
-        <main className="min-h-screen w-full flex justify-center items-start p-8">
-            <div className="w-[50%]">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <ImageContainer category={category} />
-                </Suspense>
-            </div>
-            <div className="w-1/3 flex flex-col justify-center items-center gap-2 bg-[#F6C391] rounded-lg">
+        <main className="min-h-screen w-full flex items-start justify-between">
+            <div
+                className="fixed w-[20%] h-screen overflow-y-auto flex flex-col justify-start
+         items-center gap-2 bg-[#F6C391]"
+            >
                 <div className="pt-4 w-full text-center">
                     <p className="text-xl font-bold uppercase text-white drop-shadow-md">
                         Categories
                     </p>
                 </div>
-                <div className="w-full flex flex-wrap justify-center items-center gap-2 pb-4">
-                    {categories?.map((category: string, index: number) => (
+                <div className="w-full flex flex-col justify-center items-center gap-2 p-4">
+                    {categories?.map((categoryItem: string, index: number) => (
                         <div
-                            className="w-[150px]"
-                            onClick={() => setCategory(category)}
+                            className={`w-[80%] transition ease-in duration-100 ${
+                                categoryItem === category ? " ml-6" : ""
+                            } `}
+                            onClick={() => setCategory(categoryItem)}
                             key={index}
                         >
-                            <GradientButton category={category} />
+                            <GradientButton category={categoryItem} />
                         </div>
                     ))}
                 </div>
+            </div>
+
+            <div className="absolute left-[500px]">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ImageContainer category={category} />
+                </Suspense>
             </div>
         </main>
     )

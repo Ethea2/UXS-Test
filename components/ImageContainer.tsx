@@ -8,11 +8,11 @@ const ImageContainer = ({ category }: { category: string }) => {
     return (
         <>
             {category !== "" ? (
-                <div className=" w-full flex flex-col items-center justify-center">
-                    <div className=" w-full flex justify-center items-center">
-                        <p className="text-[#3F1D38] font-bold">
+                <div className=" w-full flex flex-col items-center justify-center gap-4 py-4">
+                    <div className=" w-full flex justify-center items-center text-white bg-white/20 p-4 rounded-md">
+                        <p className="font-bold">
                             Category:{" "}
-                            <span className="text-[#3F1D38] text-lg font-black uppercase">
+                            <span className="text-lg font-black uppercase">
                                 {category}
                             </span>
                         </p>
@@ -37,7 +37,7 @@ const ImageContainer = ({ category }: { category: string }) => {
                 </div>
             ) : (
                 <div className="w-full h-screen flex flex-col justify-center items-center">
-                    <p className="text-black">Select a category!</p>
+                    <p className="text-white">Select a category!</p>
                 </div>
             )}
         </>

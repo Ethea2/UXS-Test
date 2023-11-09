@@ -37,7 +37,7 @@ const ImageContainer = ({ category }: { category: string }) => {
                 </div>
             ) : (
                 <div className="w-full h-screen flex flex-col justify-center items-center">
-                    <p className="text-white">Select a category!</p>
+                    <p className="text-white text-4xl font-bold">Select a category!</p>
                 </div>
             )}
         </>

@@ -15,7 +15,7 @@ const Card = ({
     source_url: string
 }) => {
     return (
-        <motion.div whileHover="hover" className="w-full h-[500px] relative">
+        <motion.div whileHover="hover" className="w-full h-[1000px] relative">
             <div className="h-1/2 p-6 flex flex-col justify-center bg-black">
                 <h3 className="text-xl mb-2 font-semibold text-white">
                     Artist/Anime: {title}
